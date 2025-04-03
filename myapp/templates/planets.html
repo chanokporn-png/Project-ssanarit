@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+    <head>
+        <style>
+            .carousel-item img {
+                height: 500px; /* กำหนดความสูง */
+                object-fit: cover; /* ให้ภาพครอบคลุมพื้นที่โดยไม่เสียสัดส่วน */
+                width: 100%; /* ให้ภาพขยายไปตามความกว้างของ container */
+            }
+            footer {
+                background-color: white; /* สีขาว */
+                text-align: center;
+                padding: 20px;
+                margin-top: auto; /* ทำให้ footer อยู่ที่ด้านล่างสุด */
+                width: 100%;
+              }
+        </style>
+
+
+    <div class="text-center fw-bolder">
+        <!-- ใช้ <h1> แทน <h> เพื่อให้ถูกต้องตามมาตรฐาน HTML -->
+        <h1 style="margin-top: 60px; font-size: 60px; font-weight: bold;">PLANETS</h1>
+
+
+    <img src="{% static 'myapp/aa.png' %}" class="figure-img img-fluid rounded"
+    alt="Image" 
+    style="width: 100%; height: auto; object-fit: cover; position: absolute; top: 8000px; left: 0; z-index: -1; filter: brightness(70%);">
+
+
+    <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHp1eTY1bWR0dG45eTJqdHZmeWQ5dnNqZGxsZWgzaHJxbnJydTV1eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/APq0WQXgQQrKFcBbjP/giphy.gif" class="figure-img img-fluid rounded"
+    alt="Image" 
+    style="width: 100%; height: auto; object-fit: cover; position: absolute; top: 10px; left: 0; z-index: -1; filter: brightness(40%);">
+    
+<!-- 
+    <img src="https://as2.ftcdn.net/v2/jpg/10/06/28/93/1000_F_1006289311_jnpEd3pEQjnHMaycXLj68jVrxivTeDq0.jpg" class="figure-img img-fluid rounded"
+    alt="Image" 
+    style="width: 100%; height: auto; object-fit: cover; position: absolute; top: 1000px; left: 0; z-index: -1; filter: brightness(50%);"> -->
+    
+  
+  
+    
+        
+        <!-- เพิ่ม div คลุมรูปภาพ เพื่อให้อยู่กลางทั้งแนวนอนและแนวตั้ง -->
+        <!-- <div class="d-flex justify-content-center align-items-center" style="margin-top: 80px;">
+            <img src="{% static 'myapp/12.jpg' %}" alt="Logo" style="width: 1500px; height: auto; border-radius: 20px;"> <!-- เพิ่ม border-radius ที่นี่ -->
+        <!-- </div> -->
+        
+        <p style="margin-top: 0px; font-size: 50px;"></p>
+        
+        <div style="font-size: 20px;">
+            <p> A planet is a large, rounded astronomical body that is generally required to be in orbit around a star, stellar remnant, or brown dwarf, and is not one itself.[1] The Solar System has eight planets by the most restrictive definition of the term: the terrestrial planets Mercury, Venus, Earth, and Mars, and the giant planets Jupiter, Saturn, Uranus, and Neptune. The best available theory of planet formation is the nebular hypothesis, which posits that an interstellar cloud collapses out of a nebula to create a young protostar orbited by a protoplanetary disk. Planets grow in this disk by the gradual accumulation of material driven by gravity, a process called accretion. 
+            </p>
+
+    
+    
+    
+            
+    </div>
+    </head>
+    <div class="text-center fw-bolder">  <!-- ใช้ text-center เพื่อจัดให้อยู่ตรงกลาง -->
+        <!-- <h style="font-size: 60px; margin-top: 150px; " >PLANETS</h> -->
+        </p>
+        </div>
+    <div class="text-center">  <!-- ใช้ text-center เพื่อจัดให้อยู่ตรงกลาง -->
+        </p>
+        {% load static %}
+        <img src="{% static 'myapp/ee.jpg' %}" alt="Logo" class="mb-5" style="width: 600px; height: auto; margin-top: 1500px;">
+        <p style="margin-top: 30px; font-size: 50px;" > EARTH </p>
+        <div style="font-size: 20px;">
+            <p> Earth is the third planet from the Sun and the only astronomical object known to harbor life. This is enabled by Earth being an ocean world, the only one in the Solar System sustaining liquid surface water. Almost all of Earth's water is contained in its global ocean, covering 70.8% of Earth's crust. The remaining 29.2% of Earth's crust is land, most of which is located in the form of continental landmasses within Earth's land hemisphere. Most of Earth's land is at least somewhat humid and covered by vegetation, while large sheets of ice at Earth's polar deserts retain more water than Earth's groundwater, lakes, rivers, and atmospheric water combined. Earth's crust consists of slowly moving tectonic plates, which interact to produce mountain ranges, volcanoes, and earthquakes. Earth has a liquid outer core that generates a magnetosphere capable of deflecting most of the destructive solar winds and cosmic radiation.</p>
+        <img src="{% static 'myapp/n.jpg' %}" alt="Logo" class="mb-5" style="width: 670px; height: auto; margin-top: 150px;">
+        <p style="margin-top: 30px; font-size: 50px;" > NEPTUNE </p>
+        <div style="font-size: 20px;">
+            <p> Neptune, third most massive planet of the solar system and the eighth and outermost planet from the Sun. Because of its great distance from Earth, it cannot be seen with the unaided eye. With a small telescope, it appears as a tiny, faint blue-green disk. It is designated by the symbol
+            Neptune is named for the Roman god of the sea, who is identified with the Greek deity Poseidon, a son of the Titan Cronus (the Roman god Saturn) and a brother of Zeus (the Roman god Jupiter). It is the second planet to have been found by means of a telescope. Its discovery in 1846 was a remarkable combination of the application of solid Newtonian physics and a belief in a numerological scheme that later proved to be scientifically unfounded (see below Neptune’s discovery). Neptune’s orbit is almost perfectly circular; as a result, its distance from the Sun varies comparatively little over its nearly 164-year period of revolution. Although the dwarf planet Pluto’s mean distance from the Sun is greater than Neptune’s, its orbit is so eccentric (elongated) that for about 20 years of each revolution Pluto is actually nearer the Sun than is Neptune.</p>
+        <img src="{% static 'myapp/v.jpg' %}" alt="Logo" class="mb-5" style="width: 980px; height: auto; margin-top: 150px;">
+        <p style="margin-top: 30px; font-size: 50px;" > SATURN </p>
+        <div style="font-size: 20px;">
+            <p> Saturn is the sixth planet from the Sun and the second largest in the Solar System, <br> after Jupiter. It is a gas giant, with an average radius of about nine times that of Earth. It has an eighth the average density of Earth, but is over 95 times more massive. Even though Saturn is almost as big as Jupiter, Saturn has less than a third its mass. Saturn orbits the Sun at a distance of 9.59 AU (1,434 million km), with an orbital period of 29.45 years.</p>
+        <img src="{% static 'myapp/d.png' %}" alt="Logo" class="mb-5" style="width: 640px; height: auto; margin-top: 150px;">
+        <p style="margin-top: 30px; font-size: 50px;" > URANUS </p>
+        <div style="font-size: 20px;">
+            <p> Uranus is the seventh planet from the Sun. It is a gaseous cyan-coloured ice giant. Most of the planet is made of water, ammonia, and methane in a supercritical phase of matter, which astronomy calls "ice" or volatiles. The planet's atmosphere has a complex layered cloud structure and has the lowest minimum temperature (49 K (−224 °C; −371 °F)) of all the Solar System's planets. It has a marked axial tilt of 82.23° with a retrograde rotation period of 17 hours and 14 minutes. This means that in an 84-Earth-year orbital period around the Sun, its poles get around 42 years of continuous sunlight, followed by 42 years of continuous darkness.</p>
+        <img src="{% static 'myapp/ju.jpg' %}" alt="Logo" class="mb-5" style="width: 1000px; height: auto; margin-top: 150px;">
+        <p style="margin-top: 30px; font-size: 50px;" > JUPITER </p>
+        <div style="font-size: 20px;">
+            <p> Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass more than 2.5 times that of all the other planets in the Solar System combined and slightly less than one-thousandth the mass of the Sun. Its diameter is eleven times that of Earth, and a tenth that of the Sun. Jupiter orbits the Sun at a distance of 5.20 AU (778.5 Gm), with an orbital period of 11.86 years. It is the third-brightest natural object in the Earth's night sky, after the Moon and Venus, and has been observed since prehistoric times. Its name derives from that of Jupiter, the chief deity of ancient Roman religion.</p>
+        </div>
+    </div>
+
+    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="margin-top: 35vh;">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://plus.unsplash.com/premium_photo-1717620945061-fdb31301a205?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Image" >
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1643330683233-ff2ac89b002c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Image">
+          </div>
+          <div class="carousel-item">
+            <img src="https://plus.unsplash.com/premium_photo-1677609371686-2cd94779a864?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Image">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div> -->
+
+
+
+{% endblock %}

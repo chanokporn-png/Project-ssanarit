@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Sat_data</title>
+{% endblock %}
+
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+  
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 8px 12px;
+                text-align: left;
+                border: 1px solid #ddd;
+            }
+            th {
+                background-color: #f2f2f2;
+                color: black;
+            }
+            #searchInput {
+                margin-bottom: 20px;
+                padding: 8px;
+                width: 100%;
+                max-width: 300px;
+                border: 1px solid #ddd;
+            }
+            
+            /* ทำให้กล่องค้นหาตรงกลาง */
+            .search-container {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <h1 class="text-center">SAT_DATA</h1>
+
+        <hr>
+
+        <!-- กล่องค้นหา (ตรงกลาง) -->
+        <div class="search-container" style="margin-top: 50px;">
+            <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for object name or ID..." />
+        </div>
+
+        <!-- เริ่มตาราง -->
+        <table style="margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th class="text-center">Object_name</th>
+                    <th class="text-center">Object_id</th>
+                    <th class="text-center">mean_motion</th>
+                    <th class="text-center">Epoch</th>
+                    <th class="text-center">Bstar</th>
+                    <th class="text-center">Inclination</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                {% for sat_data in sat_data %}
+                    <tr>
+                        <td>{{ sat_data.0 }}</td>
+                        <td>{{ sat_data.1 }}</td>
+                        <td>{{ sat_data.2 }}</td>  
+                        <td>{{ sat_data.4 }}</td>  
+                        <td>{{ sat_data.15 }}</td> 
+                        <td>{{ sat_data.5 }}</td> 
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- กรณีไม่มีข้อมูล -->
+        {% if not sat_data %}
+            <p>Not found.</p>
+        {% endif %}
+
+        <script>
+            function filterTable() {
+                var input, filter, table, tr, td, i, j, txtValue;
+                input = document.getElementById("searchInput");
+                filter = input.value.toLowerCase();
+                table = document.querySelector("table");
+                tr = table.getElementsByTagName("tr");
+
+                // Loop through all table rows, and hide those who don't match the search query
+                for (i = 1; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td");
+                    let match = false;
+
+                    for (j = 0; j < td.length; j++) {
+                        txtValue = td[j].textContent || td[j].innerText;
+                        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                            match = true;
+                            break;
+                        }
+                    }
+
+                    if (match) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
+
+    </body>
+    </html>
+{% endblock %}

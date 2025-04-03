@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Sat_data</title>
+{% endblock %}
+
+{% block content %}
+<!-- templates/show_fits_image.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITS Image Viewer</title>
+</head>
+<body>
+    <h1>FITS Image: {{ image_name }}</h1>
+
+    {% if image_base64 %}
+        <!-- ใช้ base64 สำหรับการแสดงภาพ -->
+        <img src="data:image/png;base64,{{ image_base64 }}" alt="FITS Image" />
+    {% else %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
+
+{% endblock %}

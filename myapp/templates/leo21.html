@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>LEO 21/01/2025</title>
+{% endblock %}
+
+{% block content %}
+    <div class="text-center fw-bolder">  <!-- ใช้ text-center เพื่อจัดให้อยู่ตรงกลาง -->
+        <h style="font-size: 60px;" >LEO (21/01/2025)</h>
+        </p>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* ลบจุดขาวจากรายการ */
+        ul {
+            list-style-type: none;  /* ลบจุดกลมออก */
+            padding: 0;  /* ลบการเว้นระยะซ้ายของรายการ */
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>เลือกตัวเลือกจาก Links</title> -->
+</head>
+<body>
+    <!-- <h1>เลือกตัวเลือกจาก Links</h1> -->
+
+    <!-- แสดงลิ้งค์ให้เลือก -->
+    <ul>
+        {% for option in options %}
+            <!-- <li><a href="cosmos/">{{ option }}</a></li> -->
+            <li><a href="{{ option.url }}">{{ option.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <!-- แสดงผลหลังการเลือก -->
+    {% if selected_option %}
+        <p>คุณเลือก: {{ selected_option }}</p>
+    {% endif %}
+</body>
+</html>
+
+{% endblock %}
+

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>data</title>
+{% endblock %}
+
+
+{% block content%}
+    <!-- ก้อนที่หนึ่ง -->
+    <!-- อันนี้สำหรับ หัวเรื่อง เขียนข้อความให้เรียงเป็นแต่ละบรรทัดเลยไม่ได้กำหนดอะไร -->
+    <!-- <h1 style="color: violet;">Noon Chanokporn</h1>
+    <p>Hello, my name is Chanokporn Saiwiwat.</p> -->
+
+
+    <!-- ก้อนที่สอง สำหรับpattern อยากให้แสดงอะไร เปลี่ยน data ไปตามที่กรอกในหน้า views.py -->
+    <!-- <h1>สวัสดี , {{fname | upper}} </h1>
+    <h2>ปีนี้คุณมีอายุ {{age}} ปี</h2>
+
+    {% if age >= 30 %}
+        <h3>old</h3>
+    {% else %}
+        <h3>teen cute</h3>
+    {% endif %} -->
+
+    <!-- ก้อนที่สาม (show data ที่เป็นข้อมูลบรรทัด -->
+        <!-- {{all_person}} -->
+
+    <!-- ก้อนที่สี่ -->
+        <h1 class="text-center fw-bolder" style="font-size: 60px; margin-top: 50px;">Data</h1>
+<!-- ข้างล่างคือการแสดง message สีเขียวๆว่าทำงานเสร็จเรียบร้อย -->
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li class="alert alert-success">{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+        <style>
+        .table {
+        color: white !important; /* กำหนดสีตัวอักษรเป็นสีขาว */
+        }
+
+        .table th, .table td {
+        color: white !important; /* บังคับให้สีตัวอักษรในเซลล์เป็นสีขาว */
+        }
+        </style>
+        <!-- การแก้สีของตารางใส่ตรงบันทัดด้านล่าง -->
+        <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for person in all_person %}
+              <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{person.name}}</td>
+                <td>{{person.age}}</td>
+                <!-- สองบรรทัดด้านล่างคือการให้เพิ่มเป็นลิ้งค์ -->
+                <!-- <td><a href="#">แก้ไข</a></td>
+                <td><a href="#">แก้ไข</a></td> -->
+                <!-- สองบรรทัดด้านล่างคือการให้เพิ่มเป็นปุ่ม -->
+                <td><a href="/index/edit/{{person.id}}" class="btn btn-light">edit</a></td>
+                <td>
+                  <a href="/index/delete/{{person.id}}"
+                  class="btn btn-danger"
+                  onclick="return confirm('Comfirm Delete {{person.name}}?')"
+                  >delete</a>
+                </td>
+              </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+
+
+{% endblock %}

@@ -1,0 +1,337 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Cosmos</title>
+    <style>
+    img {
+        background: (blue 0 0); height: 50vh
+    }
+    </style>
+
+{% endblock %}
+
+{% block content %}
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="UTF-8">
+    <style>
+    /* img {
+        border-radius: 50%;
+    } */
+      
+    </style>
+    
+    </head>
+
+    {% load static %}
+    <img src="{% static 'myapp/45.gif' %}" class="figure-img img-fluid rounded"
+    alt="GIF" 
+    style="width: 100vw; height: 100vw; object-fit: cover; position: absolute; top: 0px; left: 0; z-index: -1; filter: brightness(25%);">
+
+
+
+</html>
+    <div class="text-center fw-bolder">
+        <h style="font-size: 60px; margin-top: 150px;">COSMOS</h>
+
+        <!-- ปุ่มเลือกประเภทภาพ -->
+        <div style="margin-top: 80px;">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btn-all" autocomplete="off" checked onclick="showImages('all')">
+                <label class="btn btn-outline-primary" for="btn-all" style="font-size: 20px; padding: 10px 30px;">All</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="btn-single" autocomplete="off" onclick="showImages('single')">
+                <label class="btn btn-outline-primary" for="btn-single" style="font-size: 20px; padding: 10px 30px;">Single</label>
+              
+                <input type="radio" class="btn-check" name="btnradio" id="btn-slide" autocomplete="off" onclick="showImages('slide')">
+                <label class="btn btn-outline-primary" for="btn-slide" style="font-size: 20px; padding: 10px 30px;">Slides</label>
+              
+                <input type="radio" class="btn-check" name="btnradio" id="btn-animation" autocomplete="off" onclick="showImages('animation')">
+                <label class="btn btn-outline-primary" for="btn-animation" style="font-size: 20px; padding: 10px 30px;">Animation</label>
+            </div>
+        
+    {% load static %}
+    <!-- กลุ่มภาพ -->
+    <style>
+      /* กำหนดสีตัวหนังสือใน card-body ทั้งหมดให้เป็นสีดำ */
+      .card-body {
+          color: black;
+      }
+    </style>  
+    <div id="all-images" class="image-group" style="margin-top: 90px;">
+      <div class="row row-cols-1 row-cols-md-3 g-10">
+          <div class="col" style="margin-bottom: 40px;">
+              <div class="card h-100">
+                  <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0002_20s.png' %}" class="card-img-top" alt="Logo">
+                  <div class="card-body">
+                      <h5 class="card-title">COSMOS 5s</h5>
+                      <p class="card-text">20:01</p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+              </div>
+          </div>
+          <div class="col" style="margin-bottom: 40px;">
+              <div class="card h-100">
+                  <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0003_20s.png' %}" class="card-img-top" alt="Logo">
+                  <div class="card-body">
+                      <h5 class="card-title">COSMOS 5s</h5>
+                      <p class="card-text">20:54</p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+              </div>
+          </div>
+          <div class="col" style="margin-bottom: 40px;">
+              <div class="card h-100">
+                  <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0004_20s.png' %}" class="card-img-top" alt="Logo">
+                  <div class="card-body">
+                      <h5 class="card-title">COSMOS 5s</h5>
+                      <p class="card-text">20:03</p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+              </div>
+          </div>
+          <div class="col" style="margin-bottom: 30px;">
+              <div class="card h-100">
+                  <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0005_20s.png' %}" class="card-img-top" alt="Logo">
+                  <div class="card-body">
+                      <h5 class="card-title">COSMOS 5s</h5>
+                      <p class="card-text">20:05</p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+              </div>
+          </div>
+          <div class="col" style="margin-bottom: 30px;">
+              <div class="card h-100">
+                  <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0006_20s.png' %}" class="card-img-top" alt="Logo">
+                  <div class="card-body">
+                      <h5 class="card-title">COSMOS 5s</h5>
+                      <p class="card-text">20:08</p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+              </div>
+          </div>
+          <div class="col" style="margin-bottom: 30px;">
+              <div class="card h-100">
+                  <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0007_20s.png' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title">COSMOS 5s</h5>
+                      <p class="card-text">20:10</p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+    
+    <style>
+      /* กำหนดสีตัวหนังสือใน figcaption ให้เป็นสีขาว */
+      .figure-caption {
+          color: white;
+      }
+      .figure-caption {
+          font-size: 15px;
+      }
+
+    </style>
+    <div id="single-images" class="image-group" style="display: none;">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 50px; margin-top: 80px;"></div>
+        <figure class="figure">
+          <figcaption class="figure-caption">COSMOS 5s</figcaption>
+          <figcaption class="figure-caption">20:46</figcaption>
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0002_20s.png' %}" class="figure-img img-fluid rounded" alt="Logo" style="width: 700px; height: auto;" alt="all-1">
+          </figure>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 50px; margin-top: 80px;">
+        <figure class="figure">
+          <figcaption class="figure-caption">COSMOS 5s</figcaption>
+          <figcaption class="figure-caption">20:46</figcaption>
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0003_20s.png' %}" class="figure-img img-fluid rounded" alt="Logo" style="width: 700px; height: auto;" alt="all-1">
+            </figure>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 50px; margin-top: 80px;">
+          <figure class="figure">
+            <figcaption class="figure-caption">COSMOS 5s</figcaption>
+            <figcaption class="figure-caption">20:46</figcaption>
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0004_20s.png' %}" class="custom-rounded" style="width: 700px; height: auto;" alt="all-1">
+            </figure>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 50px; margin-top: 80px;">
+        <figure class="figure">
+          <figcaption class="figure-caption">COSMOS 5s</figcaption>
+          <figcaption class="figure-caption">20:46</figcaption>
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0005_20s.png' %}" class="custom-rounded" style="width: 700px; height: auto;" alt="all-1">
+            </figure>
+        </div>
+    </div>
+
+    <div id="slide-images" class="image-group" style="display: none;">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="display: flex; justify-content: center; align-items: center; gap: 50px; margin-top: 80px;">
+          <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0002_20s.png' %}" 
+                          class="d-block mx-auto" 
+                          style="width: 80%; max-width: 700px; height: auto;" 
+                          alt="Slide 1">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5>cosmos 5s</h5>
+                            <p>20:10</p>
+                          </div>
+              </div>              
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0003_20s.png' %}" 
+                          class="d-block mx-auto" 
+                          style="width: 80%; max-width: 700px; height: auto;" 
+                          alt="Slide 1">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5>cosmos 5s</h5>
+                            <p>20:11</p>
+                          </div>
+              </div>   
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0004_20s.png' %}" 
+                          class="d-block mx-auto" 
+                          style="width: 80%; max-width: 700px; height: auto;" 
+                          alt="Slide 1">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5>cosmos 5s</h5>
+                            <p>20:12</p>
+                          </div>
+              </div>
+          
+      </div>
+  </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+          </button>
+          </div>
+  </div>
+</div>
+  
+
+    <div id="animation-images" class="image-group" style="display: block;">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 50px; margin-top: 80px;">
+        <style>
+            /* จัดให้ container อยู่ตรงกลางหน้าจอ */
+            .animation-container {
+                position: relative;
+                width: 700px; /* กำหนดขนาด container */
+                height: 700px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden; /* ให้ภาพไม่เกินขอบเขต */
+            }
+
+            /* ตั้งค่าภาพให้ซ้อนกันและแสดงผลแบบอนิเมชัน */
+            .animated-frame {
+                position: absolute;
+                width: 100%;
+                height: auto;
+                animation: fadeAnimation 3.6s infinite;
+            }
+
+            /* ตั้งค่า animation delay สำหรับแต่ละรูป */
+            .animated-frame:nth-child(2) { animation-delay: 0s; }
+            .animated-frame:nth-child(3) { animation-delay: 0.2s; }
+            .animated-frame:nth-child(4) { animation-delay: 0.4s; }
+            .animated-frame:nth-child(5) { animation-delay: 0.5s; }
+            .animated-frame:nth-child(6) { animation-delay: 0.6s; }
+            .animated-frame:nth-child(7) { animation-delay: 0.8s; }
+            .animated-frame:nth-child(8) { animation-delay: 1s; }
+            .animated-frame:nth-child(9) { animation-delay: 1.2s; }
+            .animated-frame:nth-child(10) { animation-delay: 1.4s; }
+            .animated-frame:nth-child(11) { animation-delay: 1.6s; }
+            .animated-frame:nth-child(12) { animation-delay: 1.8s; }
+            .animated-frame:nth-child(13) { animation-delay: 2s; }
+            .animated-frame:nth-child(14) { animation-delay: 2.2s; }
+            .animated-frame:nth-child(15) { animation-delay: 2.4s; }
+            .animated-frame:nth-child(16) { animation-delay: 2.6s; }
+            .animated-frame:nth-child(17) { animation-delay: 2.8s; }
+            .animated-frame:nth-child(18) { animation-delay: 3s; }
+            .animated-frame:nth-child(19) { animation-delay: 3.2s; }
+            .animated-frame:nth-child(20) { animation-delay: 3.4s; }
+
+            /* กำหนดให้รูปภาพค่อยๆ จางลงและเปลี่ยนเป็นรูปต่อไป */
+            @keyframes fadeAnimation {
+                99% { opacity: 0; }
+            }
+
+        </style>
+
+        <!-- ส่วนของ HTML -->
+        <div class="animation-container">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0002_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0003_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0004_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0005_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0006_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0007_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0008_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0009_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0010_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0011_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0012_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0013_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0014_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0015_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0016_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0017_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0018_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0019_20s.png' %}" class="animated-frame">
+            <img src="{% static 'myapp/21/LEO/COSMOS/COSMOS 2433-0020_20s.png' %}" class="animated-frame">
+        </div>
+    </div>
+
+
+
+<script>
+    function showImages(type) {
+        // ซ่อนทุกกลุ่ม
+        document.querySelectorAll('.image-group').forEach(div => div.style.display = 'none');
+        // Hide all image groups first
+        document.getElementById("all-images").style.display = "none";
+        document.getElementById("single-images").style.display = "none";
+        document.getElementById("slide-images").style.display = "none";
+        document.getElementById("animation-images").style.display = "none";
+
+        // แสดงกลุ่มที่เลือก
+        if (type === 'all') {
+            document.getElementById('all-images').style.display = 'block';
+        } else if (type === 'single') {
+            document.getElementById('single-images').style.display = 'block';
+        } else if (type === 'slide') {
+            document.getElementById('slide-images').style.display = 'block';
+        } else if (type === 'animation') {
+            document.getElementById('animation-images').style.display = 'block';
+        }
+    }
+</script>
+
+
+    {% endblock %}

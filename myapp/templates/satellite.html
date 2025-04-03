@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Satellite</title>
+{% endblock %}
+
+{% load static %}
+{% block content %}
+
+
+    <div style="display: flex; justify-content: flex-start; align-items: flex-start; margin-top: 265px;">
+        <!-- ส่วนข้อความ -->
+        <div class="fw-bolder" style="width: 60%; text-align: left; margin-left: -150px; margin-right: -500px;">
+            <h1 style="font-size: 60px; font-weight: bold;">SATELLITE</h1>
+            <div style="font-size: 20px;">
+                <p> A planet is a large, rounded astronomical body that is generally required to be in orbit around a star, stellar remnant, or brown dwarf, and is not one itself. The Solar System has eight planets by the most restrictive definition of the term: the terrestrial planets Mercury, Venus, Earth, and Mars, and the giant planets Jupiter, Saturn, Uranus, and Neptune. The best available theory of planet formation is the nebular hypothesis, which posits that an interstellar cloud collapses out of a nebula to create a young protostar orbited by a protoplanetary disk. Planets grow in this disk by the gradual accumulation of material driven by gravity, a process called accretion.</p>
+            </div>
+        </div>
+
+        <!-- วิดีโอ -->
+        <video width="auto" height="430" controls autoplay muted loop style="border-radius: 25px;  margin-left: 650px">
+            <source src="https://v.ftcdn.net/10/58/12/60/700_F_1058126062_CmQxS4y3AayQeeElgqvF6X7HWSp6ZonK_ST.mp4" type="video/mp4">
+            Your browser does not support the video tag. 
+        </video>
+    </div>
+
+      
+    
+
+    <!-- รูปภาพเต็มหน้าจอ แต่ไม่ไปทับ navbar -->
+    <!-- <img src="https://isatafrica.com/wp-content/uploads/2023/07/MEO-Service-Featured.webp" 
+    alt="Image" 
+    style="width: 100%; height: 100vh; object-fit: cover; position: absolute; top: 0; left: 0; z-index: -1;"> -->
+
+    <!-- รูปภาพครึ่งหน้าจอ -->
+    <img src="https://png.pngtree.com/background/20230528/original/pngtree-an-image-of-satellite-with-earth-in-the-background-picture-image_2780246.jpg" 
+         alt="Image" 
+         style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: -1; filter: brightness(35%);">
+
+    <!-- <div class="bg-image" style="position: relative; height: 100vh;">
+        <img src="{% static 'myapp/77.png' %}" alt="Image" 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 50%; object-fit: cover;">
+    </div> -->
+    <head>
+        <style>
+            .carousel-item img {
+                height: 400px; /* กำหนดความสูง */
+                object-fit: cover; /* ให้ภาพครอบคลุมพื้นที่โดยไม่เสียสัดส่วน */
+                width: 100%; /* ให้ภาพขยายไปตามความกว้างของ container */
+            }
+
+        </style>
+
+<!-- <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+      <div class="card">
+        <img src="{% static 'myapp/ee.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body" style="color: black;">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="{% static 'myapp/n.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="{% static 'myapp/v.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="{% static 'myapp/d.png' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+<!-- <div class="card-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); gap: 0px; justify-content: center;">
+    <div class="card" style="width: 18rem; top: 300px; height: 400px; object-fit: cover;">
+      <img src="{% static 'myapp/ee.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body" style="color: black; background-color: #D3D3D3;">
+        <h5 class="card-title">EARTH</h5>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem; top: 300px; height: 400px; object-fit: cover;">
+      <img src="{% static 'myapp/n.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body" style="color: black; background-color: #D3D3D3;">
+        <h5 class="card-title">NEPTUNE</h5>
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem; top: 300px; height: 400px; object-fit: cover;">
+      <img src="{% static 'myapp/v.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body" style="color: black; background-color: #D3D3D3;">
+        <h5 class="card-title">SATURN</h5> -->
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem; top: 300px; height: 400px; object-fit: cover;">
+      <img src="{% static 'myapp/ju.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body" style="color: black; background-color: #D3D3D3;">
+        <h5 class="card-title">URANUS</h5>
+         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+    <div class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body" style="color: black;">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+{% endblock %}
